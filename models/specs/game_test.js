@@ -31,7 +31,20 @@ describe ('Game', function (){
     game.popACard();
     const actual = game.deck.length;
     assert.strictEqual(actual, 1);
-
   });
+
+  it('should deal', function(){
+    game.deal();
+    const actual1 = game.player1.hand.length;
+    assert.strictEqual(actual1, 1);
+    const actual2 = game.player2.hand.length;
+    assert.strictEqual(actual2, 1);
+  })
+
+  it('deck is empty after dealing', function(){
+    game.deal();
+    const actual = game.deck.length;
+    assert.strictEqual(actual, 0);
+  })
 
 });
