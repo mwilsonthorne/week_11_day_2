@@ -27,4 +27,11 @@ describe ('Game', function (){
 
   });
 
+  it('should pop a card', function(){
+    game.popACard();
+    const actual = game.deck.length;
+    assert.strictEqual(actual, 1);
+
+  });
+
 });
